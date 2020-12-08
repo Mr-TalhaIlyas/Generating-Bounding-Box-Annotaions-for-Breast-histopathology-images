@@ -13,9 +13,9 @@ import matplotlib.pyplot as plt
 import matplotlib as mpl
 mpl.rcParams['figure.dpi'] = 300
 # give file path
-json_dir = 'D:/Anaconda/Datasets/Breast Biopsy/groundTruth/'
-img_dir = 'D:/Anaconda/Datasets/Breast Biopsy/images/'
-op_dir = 'D:/Anaconda/Datasets/Breast Biopsy/xml_boxes/'
+json_dir = '../Breast Biopsy/groundTruth/'
+img_dir = '../Breast Biopsy/images/'
+op_dir = '../Breast Biopsy/xml_boxes/'
 def xywh_2_xyminmax(box):
     '''
     input_box : (x, y, w, h)
@@ -47,17 +47,26 @@ for i in trange(len(json_filepaths)):
     name = os.path.basename(json_filepaths[i])[:-5] # -5 b/c .josn is 5 characters
     # read the json file from given path
     with open(json_filepaths[i]) as json_file: 
+        # here json_file will be a text wrapped
+        # and json will be python dict type containing data
+        j_son = json.load(json_file) 
+        img = cv2.imread(img_filepaths[i]) / 255
+        h, w, ch = img.shape
         # start a xml file root
         root = gfg.Element("annotation") 
         #element
         e1 = gfg.Element("filename") 
         e1.text = str(name+'.tif')
         root.append (e1) 
-        # here json_file will be a text wrapped
-        # and json will be python dict type containing data
-        j_son = json.load(json_file) 
-        img = cv2.imread(img_filepaths[i]) / 255
-        h, w, _ = img.shape
+        # write size info
+        e1_1 = gfg.Element("size") 
+        root.append (e1_1)
+        se1_1 = gfg.SubElement(e1_1, 'width')
+        se1_1.text = str(w)
+        se1_2 = gfg.SubElement(e1_1, 'height')
+        se1_2.text = str(h)
+        se1_3 = gfg.SubElement(e1_1, 'depth')
+        se1_3.text = str(ch)
         # get all the classes in the GT file and make a list of them
         keys = list(j_son.keys())
         # get the values of those classes 
