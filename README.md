@@ -42,7 +42,7 @@ Boxes
 ```python
 plot_annotations(img_filepath, json_filepath, annotatio_type = 'bnd_box')
 ```
-![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/img(4).png)
+![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/img(5).png)
 ## Converting the annotations to XML (bounding boxes)
 
 ### Usage
