@@ -14,8 +14,9 @@ The task associated with this dataset is to automatically classify histological 
 
 ### BreCaHAD: a dataset for breast cancer histopathological annotation and diagnosis
 
-For details on this data set you can read the followin paper here(https://bmcresnotes.biomedcentral.com/articles/10.1186/s13104-019-4121-7)
-You can download the full dataset from here (https://figshare.com/articles/BreCaHAD_A_Dataset_for_Breast_Cancer_Histopathological_Annotation_and_Diagnosis/7379186)
+For details on this data set you can read the followin paper [here](https://bmcresnotes.biomedcentral.com/articles/10.1186/s13104-019-4121-7)
+
+You can download the full dataset from [here](https://figshare.com/articles/BreCaHAD_A_Dataset_for_Breast_Cancer_Histopathological_Annotation_and_Diagnosis/7379186)
 
 ### Usage 
 
@@ -32,19 +33,30 @@ plot_annotations(img_filepath, json_filepath, annotatio_type = 'circle')
 
 ```
 Circels
-```
+```python
 plot_annotations(img_filepath, json_filepath, annotatio_type = 'circle')
 ```
-
+![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/img(3).png)
 Boxes
 
-```
+```python
 plot_annotations(img_filepath, json_filepath, annotatio_type = 'bnd_box')
 ```
+![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/img(4).png)
 ## Converting the annotations to XML (bounding boxes)
+
+### Usage
 
 ```python
 json_dir = '../Breast Biopsy/groundTruth/' # path to json files
 img_dir = '../Breast Biopsy/images/'       # path to image files
 op_dir = '../Breast Biopsy/xml_boxes/'     # path to output xml files
 ```
+### Sample Output
+
+![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/img(2).png)
+![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/img(1).png)
+
+## Data Augumentation 
+
+As image are very high resolution and resizing them will reduce the WSI resolution, we might lose a lot of useful information so to increase the dataset size we can do data augumentaion. To avoid reduce in WSI resolution and quality we can use upscale data augementation or SSD crops etc. For details check out my repo [here](https://github.com/Mr-TalhaIlyas/Augumenting_Detection_Dataset)
