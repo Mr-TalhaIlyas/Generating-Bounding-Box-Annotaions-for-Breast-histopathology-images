@@ -14,16 +14,16 @@ The task associated with this dataset is to automatically classify histological 
 
 ### BreCaHAD: a dataset for breast cancer histopathological annotation and diagnosis
 
-For details on this data set you can read the followin paper [here](https://bmcresnotes.biomedcentral.com/articles/10.1186/s13104-019-4121-7)
+For details on this data set you can read the original paper [here](https://bmcresnotes.biomedcentral.com/articles/10.1186/s13104-019-4121-7)
 
 You can download the full dataset from [here](https://figshare.com/articles/BreCaHAD_A_Dataset_for_Breast_Cancer_Histopathological_Annotation_and_Diagnosis/7379186)
 
 ### Usage 
 
-Displaying annotations
+Displaying annotations in `breast_histology_display.py` give the file path to see the annotations plotted on the image
 
 ```python
-# in breast_histology_display.py give the file path to see the annotations plotted on the image
+
 
 json_filepath = 'D:/Anaconda/Datasets/Breast Biopsy/groundTruth/Case_1-02.json'
 img_filepath = 'D:/Anaconda/Datasets/Breast Biopsy/images/Case_1-02.tif'
@@ -44,7 +44,7 @@ plot_annotations(img_filepath, json_filepath, annotatio_type = 'bnd_box')
 ```
 ![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/img(5).png)
 ## Converting the annotations to XML (bounding boxes)
-
+in `breast_jsonpts2xmlbox.py` set the file path to convert the annotations.
 ### Usage
 
 ```python
