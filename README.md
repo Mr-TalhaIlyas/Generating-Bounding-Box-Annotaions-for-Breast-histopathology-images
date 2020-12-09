@@ -1,4 +1,4 @@
-# Converting Brease Histopathology Dignosis Data into Detection Dataset
+# Converting Breast Histopathology Tumor Dignosis Data into Detection Dataset
 
 The annotatoins provided with the BreCaHAD are json files for each image the corresponding file contains the normalized center points of the different cell types.
 This repo converts those center points into the un-normalized bounding boxes with width and hight of 30x30 pixels (I choose this area because with this size the box completely contains a single cell).
