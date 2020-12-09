@@ -74,10 +74,17 @@ Note: This data is not the rotated or flipped version of the image (as in typica
 
 ## Results
 
-Following images are SSD crops of original ones along with their scaled annotations,
+Following images are SSD crops of original ones along with their scaled annotations. Form the follwing images we can clearly see that we have simplified the data quite a bit.
 
 ![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/img_(2).png)
 ![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/img_(3).png)
 ![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/img_(4).png)
 ![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/img_(5).png)
 ![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/img_(6).png)
+
+### PS
+________
+As for getting the prediction on the original data,
+* we can just crop it into 9 parts as shown above 
+* pass each crop through the trained detection network
+* after getting all the 9 predictions fro each crop we can simply tile them back together in their respective place in the original image.
