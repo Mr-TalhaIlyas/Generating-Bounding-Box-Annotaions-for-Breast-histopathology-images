@@ -59,4 +59,25 @@ op_dir = '../Breast Biopsy/xml_boxes/'     # path to output xml files
 
 ## Data Augumentation 
 
-As image are very high resolution and resizing them will reduce the WSI resolution, we might lose a lot of useful information so to increase the dataset size we can do data augumentaion. To avoid reduce in WSI resolution and quality we can use upscale data augementation or SSD crops etc. For details check out my repo [here](https://github.com/Mr-TalhaIlyas/Augumenting_Detection_Dataset)
+As shown in above images we can clearly see that the images are densely annotated and the resolution is very high. Morover a lot of cells of different type are cluttered together, which will make it difficult for the network to precisely localize and classify them. As the cells alread have very little inter-class variations, we need to find a way to process the data which will increase spatial resolution of the data. But if we directly upscaled an image of resolution 1360x1024 to an even bigger resolution the computation time of CNN will explode. So one solution could be resizing all the images.But resizing them will reduce the WSI resolution, we might lose a lot of useful information.
+So to cope with this problem we can do upscale cropping or also called SSD crop data augumentation. 
+### SSD Crop
+Instead of resizing the images directly first we will crop a part of the image (with predefined aspect ratio) and then rescale it to the input size. This might sound simple but its actully not, because you don't only have to resize the image but also you will have to update its corresponding annotations in the `.xml` file to the new rescaled coordinates.
+So from a single image we will get 9 crops form different parts (i.e. 'center','left-top', 'left-center', 'left-bottom', 'center-top','center-bottom', 'right-top', 'right-center', 'right-bottom') as shown in figure below,
+![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/img_(1).png)
+Shaded regions show the each crop. Each crop has the same aspect ratio as the original image and is have 10~15% overlap with its adjecent neighbour.
+Using this technique we can avoid reduce in WSI resolution and quality. For details on how to **augument detection dataset** check out my repo [here](https://github.com/Mr-TalhaIlyas/Augumenting_Detection_Dataset)
+Using SSD crop will give us two major benefits,
+* Spatially enhance the data for the CNN for better performance
+* Increase the data size from 162 original images to 1458 SSD crop images.
+Note: This data is not the rotated or flipped version of the image (as in typical data augmentation), but actually each image in data is unique becaues we cropped the original image from different parts and then rescaled it to make the new set.
+
+## Results
+
+Following images are SSD crops of original ones along with their scaled annotations,
+
+![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/img_(2).png)
+![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/img_(3).png)
+![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/img_(4).png)
+![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/img_(5).png)
+![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/img_(6).png)
