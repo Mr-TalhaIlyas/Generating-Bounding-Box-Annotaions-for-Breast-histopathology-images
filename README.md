@@ -87,4 +87,4 @@ ________
 As for getting the prediction on the original data,
 * we can just crop it into 9 parts as shown above 
 * pass each crop through the trained detection network
-* after getting all the 9 predictions fro each crop we can simply tile them back together in their respective place in the original image.
+* after getting all the predictions for each crop we can simply tile them back together in their respective place in the original image.
