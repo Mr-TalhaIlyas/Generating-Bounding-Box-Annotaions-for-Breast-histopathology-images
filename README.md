@@ -71,7 +71,12 @@ Using SSD crop will give us two major benefits,
 * Spatially enhance the data for the CNN for better performance
 * Increase the data size from 162 original images to 1458 SSD crop images.
 Note: This data is not the rotated or flipped version of the image (as in typical data augmentation), but actually each image in data is unique becaues we cropped the original image from different parts and then rescaled it to make the new set.
-
+## Data Distribution
+The dataset is highly imbalance in favor of tumor class. So, to make the learning easy I made the following modifications.
+•	I removed the lumen and non-lumen class because these classes are not useful in downstream analysis of breast cancer.
+•	As for non-mitosis class there is no annotations available in the data as shown in bar graph below.
+The bar graph shows the number of instances of each class present in the dataset on y-axis.
+![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/bar.png)
 ## Results
 
 Following images are SSD crops of original ones along with their scaled annotations. Form the follwing images we can clearly see that we have simplified the data quite a bit.
