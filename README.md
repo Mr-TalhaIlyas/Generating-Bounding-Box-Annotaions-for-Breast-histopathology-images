@@ -65,6 +65,7 @@ So to cope with this problem we can do upscale cropping or also called SSD crop 
 Instead of resizing the images directly first we will crop a part of the image (with predefined aspect ratio) and then rescale it to the input size. This might sound simple but its actully not, because you don't only have to resize the image but also you will have to update its corresponding annotations in the `.xml` file to the new rescaled coordinates.
 So from a single image we will get 9 crops form different parts (i.e. 'center','left-top', 'left-center', 'left-bottom', 'center-top','center-bottom', 'right-top', 'right-center', 'right-bottom') as shown in figure below,
 ![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/win_s.png)
+For further details on SSD crop you can read the paper [here](https://arxiv.org/abs/1512.02325)
 Shaded regions show the each crop. Each crop has the same aspect ratio as the original image and is have 10~15% overlap with its adjecent neighbour.
 Using this technique we can avoid reduce in WSI resolution and quality. For details on how to **augument detection dataset** check out my repo [here](https://github.com/Mr-TalhaIlyas/Augumenting_Detection_Dataset)
 Using SSD crop will give us two major benefits,
