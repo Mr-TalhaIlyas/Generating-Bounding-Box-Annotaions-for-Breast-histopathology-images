@@ -78,7 +78,7 @@ The dataset is highly imbalance in favor of tumor class. So, to make the learnin
 * As for non-mitosis class there is no annotations available in the data as shown in bar graph below.
 The bar graph shows the number of instances of each class present in the dataset on y-axis.
 ![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/bar.png)
-## Results
+## Dataset Pre-processing Results
 
 Following images are SSD crops of original ones along with their scaled annotations. Form the follwing images we can clearly see that we have simplified the data quite a bit.
 
@@ -94,6 +94,6 @@ As for getting the prediction on the original data,
 * we can just crop it into 9 parts as shown above 
 * pass each crop through the trained detection network
 * after getting all the predictions for each crop we can simply tile them back together in their respective place in the original image.
-## Results
+## Results (Faster-RCNN)
 
 Coming soon!
