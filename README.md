@@ -92,7 +92,7 @@ Following images are SSD crops of original ones along with their scaled annotati
 
 ## Results (Faster-RCNN)
 
-![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/table.PNG)
+![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/table.png)
 
 ### Note
 ________
@@ -108,12 +108,12 @@ Form visual results a lot of interesting things come into light:
 * First is that network was able to classify and localize different types of cells very well with high precision and confidence.
 * Second, if you look at the third-row predictions, we can see that the network has detected a lot of tumor cells in this cropped image patch even though none of them is present in the ground truth image. One potential explanation for this may be because, as we have shown earlier, the WSI is very high resolution and can have hundreds of instances clustered together in a small area of WSI. Annotating such high-density images with high precision is very exhausting and requires a lot of time and human labor. Moreover, because of the difficulty of the task, there is a high likelihood of human error, just as seen in row 3 of the visuals.
 
-![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/Slide1.png)
-![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/Slide2.png)
-![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/Slide3.png)
-![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/Slide4.png)
-![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/Slide5.png)
-![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/Slide6.png)
-![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/Slide7.png)
+![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/Slide1.PNG)
+![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/Slide2.PNG)
+![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/Slide3.PNG)
+![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/Slide4.PNG)
+![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/Slide5.PNG)
+![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/Slide6.PNG)
+![alt text](https://github.com/Mr-TalhaIlyas/Generating-Bounding-Box-Annotaions-for-Breast-histopathology-images/blob/master/screens/Slide7.PNG)
 
 As can be seen from the visual results that network was able to detect the tumor cells with high precision, but in this case one would usually want high recall rather than high precision. So, that none of the tumor cell is ignored by the network, this can be an interesting direction to work on in future.
