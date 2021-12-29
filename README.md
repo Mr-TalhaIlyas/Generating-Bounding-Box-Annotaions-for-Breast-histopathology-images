@@ -61,6 +61,7 @@ op_dir = '../Breast Biopsy/xml_boxes/'     # path to output xml files
 
 As shown in above images we can clearly see that the images are densely annotated and the resolution is very high. Morover a lot of cells of different type are cluttered together, which will make it difficult for the network to precisely localize and classify them. As the cells alread have very little inter-class variations, we need to find a way to process the data which will increase spatial resolution of the data. But if we directly upscaled an image of resolution 1360x1024 to an even bigger resolution the computation time of CNN will explode. So one solution could be resizing all the images.But resizing them will reduce the WSI resolution, we might lose a lot of useful information.
 So to cope with this problem we can do upscale cropping or also called SSD crop data augumentation. 
+You can use [this](https://github.com/Mr-TalhaIlyas/Augmenting_Detection_Dataset) repo for more data augmentations.
 
 ### SSD Crop
 Instead of resizing the images directly first we will crop a part of the image (with predefined aspect ratio) and then rescale it to the input size. This might sound simple but its actully not, because you don't only have to resize the image but also you will have to update its corresponding annotations in the `.xml` file to the new rescaled coordinates.
